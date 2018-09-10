@@ -895,9 +895,6 @@ describe('asar package', function () {
         const {hasOwnProperty} = Object.prototype
 
         for (const [propertyName, originalValue] of Object.entries(originalFs)) {
-          console.log(`util.promisify test: propertyName is "${propertyName}".`)
-          console.log(`util.promisify test: originalValue type is "${typeof originalValue}".`)
-          console.log(`util.promisify test: originalValue is "${originalValue}".`)
           if (hasOwnProperty.call(originalValue, util.promisify.custom)) {
             expect(fs).to.have.own.property(propertyName)
                 .that.has.own.property(util.promisify.custom)
